@@ -55,12 +55,13 @@
 					.attr("height", size)
 					.attr("fill", "white");
 				// Draw the Approximate Nearest Neighbor Field.
+				// moves the grey square subfields 
 				svg1.selectAll("field_with_line")
 					.data(field_with_line_data)
 					.enter()
 					.append("rect")
-					.attr("x", function(d) { return d["X1"] / 10 - 1150; })
-					.attr("y", function(d) { return y_scale(d["Y1"] / 10) - (d["Y2"] - d["Y1"]) / 10 - 1300; })
+					.attr("x", function(d) { return d["X1"] / 10 - 3350; })
+					.attr("y", function(d) { return y_scale(d["Y1"] / 10) - (d["Y2"] - d["Y1"]) / 10 - 2600; })
 					.attr("width", function(d) { return (d["X2"] - d["X1"]) / 10; })
 					.attr("height", function(d) { return (d["Y2"] - d["Y1"]) / 10; })
 					.attr("style", "stroke:white")
