@@ -73,6 +73,7 @@
 						  .transition()
 						  .duration(1000)
 						  .attr("opacity", 0.8);
+						// a part of "X"
 						svg1.append("line")
 							.attr("id", "name1")
 							.attr("style", "stroke:white")
@@ -87,6 +88,7 @@
 							.attr("y1", y_scale(d["YMid"] / 10) - 5 - 2600)
 							.attr("x2", d["XMid"] / 10 + 5 - 3350)
 							.attr("y2", y_scale(d["YMid"] / 10) + 5 - 2600);
+						// nearest element
 						svg1.append("line")
 							.attr("id", "name0")
 							.attr("x1", d["X3"] / 10 - 3350)
@@ -99,6 +101,7 @@
 							.duration(1000)
 							.attr("style", "stroke:royalblue")
 							.attr("stroke-width", 3.5);
+						// second nearest element
 						svg1.append("line")
 							.attr("id", "name0")
 							.attr("x1", d["X5"] / 10 - 3350)
@@ -111,6 +114,7 @@
 							.duration(1000)
 							.attr("style", "stroke:hotpink")
 							.attr("stroke-width", 3.5);
+						// another part of "X"
 						svg1.append("line")
 							.attr("id", "name1")
 							.attr("style", "stroke:white")
@@ -143,6 +147,7 @@
 							.remove();
 					});
 					// Draw the basic elements.
+					// black lines on ANNF
 					svg1.selectAll("line")
 						.data(line_data)
 						.enter()
