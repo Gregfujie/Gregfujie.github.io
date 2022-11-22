@@ -30,14 +30,15 @@
 						dot_data.push(data[idx]);
 					else if (data[idx]["Label1"] == "Line")
 						line_data.push(data[idx]);
-					else if (data[idx]["Label1"] == "Field && data[idx]["Label2"] == "Line"){
-						field_with_line_data.push(data[idx]);
+					else if (data[idx]["Label1"] == "Field){
+						if (data[idx]["Label2"] == "Line")
+							field_with_line_data.push(data[idx]);
 					}
 				}
 				// Setup SVG canvas.
 				var size = 4500;
-				var x_threshold = 3350;
-				var y_threshold = 2600;
+				var x_threshold = 2350;
+				var y_threshold = 1600;
 				var svg1 = d3.select("body")
 							 .append("svg")
 							 .attr("width", size)
