@@ -36,8 +36,8 @@
 					}
 				}
 				// Setup SVG canvas.
-				var size = 6000;
-				var x_threshold = 3350;
+				var size = 6500;
+				var x_threshold = 3850;
 				var y_threshold = 2300;
 				var svg1 = d3.select("body")
 							 .append("svg")
@@ -45,8 +45,8 @@
 							 .attr("height", size);
 				// Reverse y axis to fit the convention followed by SVG formate and code.
 				var y_scale = d3.scaleLinear()
-								.domain([0, 6000])
-								.range([6000, 0]) 
+								.domain([0, 6500])
+								.range([6500, 0]) 
 				// Setup the background color.
 				svg1.selectAll("background")
 					.data([1])
