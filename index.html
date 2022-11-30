@@ -10,6 +10,7 @@
 				var dot_data = Array();
 				var line_data = Array();
 				var field_with_line_data = Array();
+				var empty_field = Array();
 				// Data filtering and clustering.
 				for (idx = 0; idx < data.length; idx++) {
 					data[idx]["X1"] = parseFloat( data[idx]["X1"] );
@@ -33,6 +34,8 @@
 					else if (data[idx]["Label1"] == "Field"){
 						if(data[idx]["Label2"] == "Line")
 						 	field_with_line_data.push(data[idx]);
+						else if(data[idx]["Label2"] == "")
+							empty_field.push(data[idx]);
 					}
 				}
 				// Setup SVG canvas.
@@ -160,7 +163,19 @@
 						.attr("x2", function(d) { return d["X2"] / 10 - 3350 + x_threshold; })
 						.attr("y2", function(d) { return y_scale(d["Y2"] / 10) - 2600 + y_threshold; })
 						.attr("style", "stroke:black")
-						.attr("stroke-width", 2);	
+						.attr("stroke-width", 2);
+					svg1.selectAll("empty_field")
+					.data(empty_field)
+					.enter()
+					.append("rect")
+					.attr("x", function(d) { return d["X1"] / 10 - 3350 + x_threshold; })
+					.attr("y", function(d) { return y_scale(d["Y1"] / 10) - (d["Y2"] - d["Y1"]) / 10 - 2600 + y_threshold; })
+					.attr("width", function(d) { return (d["X2"] - d["X1"]) / 10; })
+					.attr("height", function(d) { return (d["Y2"] - d["Y1"]) / 10; })
+					.attr("style", "stroke:white")
+					.attr("stroke-width", 2)
+					.attr("fill", "yellow")
+					.attr("opacity", 0.25)
 			});
 		</script>
 	</body>
