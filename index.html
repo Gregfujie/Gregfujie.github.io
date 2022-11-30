@@ -165,17 +165,17 @@
 						.attr("style", "stroke:black")
 						.attr("stroke-width", 2);
 					svg1.selectAll("empty_field")
-					.data(empty_field)
-					.enter()
-					.append("rect")
-					.attr("x", function(d) { return d["X1"] / 10 - 3350 + x_threshold; })
-					.attr("y", function(d) { return y_scale(d["Y1"] / 10) - (d["Y2"] - d["Y1"]) / 10 - 2600 + y_threshold; })
-					.attr("width", function(d) { return (d["X2"] - d["X1"]) / 10; })
-					.attr("height", function(d) { return (d["Y2"] - d["Y1"]) / 10; })
-					.attr("style", "stroke:white")
-					.attr("stroke-width", 2)
-					.attr("fill", "yellow")
-					.attr("opacity", 0.25)
+						.data(empty_field)
+						.enter()
+						.append("rect")
+						.attr("x", function(d) { return d["X1"] / 10 - 3350 + x_threshold; })
+						.attr("y", function(d) { return y_scale(d["Y1"] / 10) - (d["Y2"] - d["Y1"]) / 10 - 2600 + y_threshold; })
+						.attr("width", function(d) { return (d["X2"] - d["X1"]) / 10; })
+						.attr("height", function(d) { return (d["Y2"] - d["Y1"]) / 10; })
+						.attr("style", "stroke:white")
+						.attr("stroke-width", 2)
+						.attr("fill", "yellow")
+						.attr("opacity", 0.25);
 			});
 		</script>
 	</body>
